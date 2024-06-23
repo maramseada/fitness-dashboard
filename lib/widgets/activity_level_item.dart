@@ -6,28 +6,18 @@ import 'package:flutter/material.dart';
 
 import '../Data/bar_graph_data.dart';
 import '../Data/pie_chart_data.dart';
+import '../Models/bar_graph_model.dart';
 import '../Models/graph_model.dart';
 import '../core/Utils/colors.dart';
 
 class PieChartWidget extends StatelessWidget {
-  const PieChartWidget({super.key});
+  final BarGraphModel data;
+  const PieChartWidget({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
-    final barGraphData = BarGraphData();
 
-    return GridView.builder(
-      itemCount: barGraphData.data.length,
-      shrinkWrap: true,
-      physics: const ScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 15,
-        mainAxisSpacing: 12.0,
-        childAspectRatio: 5 / 4,
-      ),
-      itemBuilder: (context, index) {
-        return Container(
+    return  Container(
           decoration: BoxDecoration(
             color: Color(AppColors.secondaryColor),
             borderRadius: BorderRadius.circular(8),
@@ -47,7 +37,7 @@ class PieChartWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  barGraphData.data[index].label,
+                data.label,
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
@@ -59,11 +49,11 @@ class PieChartWidget extends StatelessWidget {
                 child: BarChart(
                   BarChartData(
                     barGroups: _chartGroups(
-                      points: barGraphData.data[index].graph,
-                      color: barGraphData.data[index].color,
+                      points: data.graph,
+                      color: data.color,
                     ),
                     borderData: FlBorderData(border: const Border()),
-                    gridData: FlGridData(show: false),
+                    gridData: const FlGridData(show: false),
                     titlesData: FlTitlesData(
                       bottomTitles: AxisTitles(
                         sideTitles: SideTitles(
@@ -72,7 +62,7 @@ class PieChartWidget extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                barGraphData.label[value.toInt()],
+                                data.label[value.toInt()],
                                 style: const TextStyle(
                                     fontSize: 11,
                                     color: Colors.grey,
@@ -82,13 +72,13 @@ class PieChartWidget extends StatelessWidget {
                           },
                         ),
                       ),
-                      leftTitles: AxisTitles(
+                      leftTitles: const AxisTitles(
                         sideTitles: SideTitles(showTitles: false),
                       ),
-                      topTitles: AxisTitles(
+                      topTitles: const AxisTitles(
                         sideTitles: SideTitles(showTitles: false),
                       ),
-                      rightTitles: AxisTitles(
+                      rightTitles: const AxisTitles(
                         sideTitles: SideTitles(showTitles: false),
                       ),
                     ),
@@ -98,10 +88,8 @@ class PieChartWidget extends StatelessWidget {
             ],
           ),
         );
-      },
-    );
-  }
 
+  }
   List<BarChartGroupData> _chartGroups(
       {required List<GraphModel> points, required Color color}) {
     return points
@@ -118,4 +106,5 @@ class PieChartWidget extends StatelessWidget {
     ]))
         .toList();
   }
+
 }

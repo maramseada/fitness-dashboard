@@ -20,7 +20,10 @@ body: SafeArea(child:Container(
         SizedBox(height: 20,),
         CenterListView(),
         LineChartSample2(),
-        ActivityLevelListView()
+        SizedBox(height: 20,),
+
+        ActivityLevelListView(),
+        SizedBox(height: 20,),
       ],
     ),
   )

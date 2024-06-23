@@ -13,33 +13,31 @@ class LineChartSample2 extends StatefulWidget {
 }
 
 class _LineChartSample2State extends State<LineChartSample2> {
-  List<Color> gradientColors = [                      Color(AppColors.flowColor),
-    Color(AppColors.mainColor)];
+  List<Color> gradientColors = [Color(AppColors.flowColor), Color(AppColors.mainColor)];
   bool showAvg = false;
 
   @override
   Widget build(BuildContext context) {
     final data = LineData();
-    return
-     Container(
-       decoration: BoxDecoration(
-         color: Color(AppColors.secondaryColor)
-             ,borderRadius: BorderRadius.circular(8),
-           boxShadow: [
-       BoxShadow(
-       color: Colors.black.withOpacity(0.2), // Shadow color
-       spreadRadius: 5, // How much the shadow should spread
-       blurRadius: 10, // How soft the shadow should be
-       offset: const Offset(3, 3), // Changes position of shadow
-     ),
-    ],   ),
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(AppColors.secondaryColor),
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2), // Shadow color
+            spreadRadius: 5, // How much the shadow should spread
+            blurRadius: 10, // How soft the shadow should be
+            offset: const Offset(3, 3), // Changes position of shadow
+          ),
+        ],
+      ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      margin: const EdgeInsets.only(right: 20, top: 20),
-
+      margin: const EdgeInsets.only(left:10, right: 20, top: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text(
+          Text(
             "Steps Overview",
             style: AppStyles.style40014(context: context),
           ),
@@ -65,12 +63,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
                       getTitlesWidget: (double value, TitleMeta meta) {
                         return data.bottomTitle[value.toInt()] != null
                             ? SideTitleWidget(
-                          axisSide: meta.axisSide,
-                          child: Text(
-                              data.bottomTitle[value.toInt()].toString(),
-                              style: TextStyle(
-                                  fontSize: 12, color: Colors.grey[400])),
-                        )
+                                axisSide: meta.axisSide,
+                                child: Text(data.bottomTitle[value.toInt()].toString(), style: TextStyle(fontSize: 12, color: Colors.grey[400])),
+                              )
                             : const SizedBox();
                       },
                     ),
@@ -79,9 +74,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                     sideTitles: SideTitles(
                       getTitlesWidget: (double value, TitleMeta meta) {
                         return data.leftTitle[value.toInt()] != null
-                            ? Text(data.leftTitle[value.toInt()].toString(),
-                            style: TextStyle(
-                                fontSize: 12, color: Colors.grey[400]))
+                            ? Text(data.leftTitle[value.toInt()].toString(), style: TextStyle(fontSize: 12, color: Colors.grey[400]))
                             : const SizedBox();
                       },
                       showTitles: true,
@@ -93,17 +86,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
                 borderData: FlBorderData(show: false),
                 lineBarsData: [
                   LineChartBarData(
-                    color:  Color(AppColors.flowColor),
+                    color: Color(AppColors.flowColor),
                     barWidth: 2.5,
                     belowBarData: BarAreaData(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [
-               Color(AppColors.flowColor)
-                            .withOpacity(0.5),
-                          Colors.transparent
-                        ],
+                        colors: [Color(AppColors.flowColor).withOpacity(0.5), Colors.transparent],
                       ),
                       show: true,
                     ),
@@ -121,4 +110,5 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ],
       ),
     );
-  }  }
+  }
+}

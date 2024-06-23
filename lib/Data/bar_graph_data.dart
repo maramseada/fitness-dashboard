@@ -40,3 +40,4 @@ class BarGraphData {
 
   final label = ['M', 'T', 'W', 'T', 'F', 'S'];
 }
+

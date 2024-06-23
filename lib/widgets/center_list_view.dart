@@ -10,7 +10,7 @@ class CenterListView extends StatelessWidget {
     final data = CenterListItem();
 
     return Container(
-      margin: const EdgeInsets.only(right: 20),
+      margin: const EdgeInsets.only(left:10, right: 20),
       child: Row(
         children: [
           Expanded(child: CenterListViewItem(data: data.drawerItem[0])),
