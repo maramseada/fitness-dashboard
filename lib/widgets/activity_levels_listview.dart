@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import '../Data/bar_graph_data.dart';
 import 'activity_level_item.dart';
 
@@ -23,7 +22,7 @@ class ActivityLevelListView extends StatelessWidget {
               childAspectRatio: 5 / 4,
             ),
             itemBuilder: (context, index) {
-              return PieChartWidget(
+              return ActivityLevelGraph(
                 data: barGraphData.data[index],
               );
             }));

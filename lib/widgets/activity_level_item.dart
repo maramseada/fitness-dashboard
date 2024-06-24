@@ -10,9 +10,9 @@ import '../Models/bar_graph_model.dart';
 import '../Models/graph_model.dart';
 import '../core/Utils/colors.dart';
 
-class PieChartWidget extends StatelessWidget {
+class ActivityLevelGraph extends StatelessWidget {
   final BarGraphModel data;
-  const PieChartWidget({super.key, required this.data});
+  const ActivityLevelGraph({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
