@@ -18,31 +18,44 @@ class CenterWidgetTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Container(
-              child: SingleChildScrollView(
+          child: SingleChildScrollView(
         child: Column(
           children: [
-            SearchWidget(),
-            SizedBox(
+Container(
+  margin: EdgeInsets.symmetric(horizontal: 15),
+  child:  SearchWidget(),
+)      ,      const SizedBox(
               height: 20,
             ),
-            CenterListView(),
-            LineChartSample2(),
-            SizedBox(
+        Container(  margin: EdgeInsets.symmetric(horizontal: 15),
+
+          child:  CenterListView(),),
+          Container(
+            margin: EdgeInsets.only(top: 15, left: 15, right: 15),
+
+            child:  LineChartWidget(),),
+            const SizedBox(
               height: 20,
             ),
-            ActivityLevelListView(),
-            SizedBox(
-              height: 20,
+    Container(
+      margin: const EdgeInsets.symmetric(horizontal: 15),
+
+      child:  const ActivityLevelListView(count: 3,),),
+            const SizedBox(
+              height: 30,
             ),
-            const PieChartWidget(),
+
+  const PieChartWidget(),
             Text(
               'Summary',
               style: AppStyles.style60016(context: context),
             ),
-            const DataSummaryWidget(),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+
+          child:  const DataSummaryWidget(),),
             Container(
-              margin: const EdgeInsets.only(top: 10, left: 10),
+              margin: const EdgeInsets.only( left: 18),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Scheduled',
@@ -50,12 +63,12 @@ class CenterWidgetTablet extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 10, right: 20, top: 10, bottom: 20),
-              child: ScheduledListView(),
+              margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              child: const ScheduledListView(),
             ),
           ],
         ),
-      ))),
+      )),
     );
   }
 }

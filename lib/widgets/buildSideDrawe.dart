@@ -22,8 +22,9 @@ class _BuildSideDrawerState extends State<BuildSideDrawer> {
 
    Container(
 
-        margin: const EdgeInsets.only(top: 12),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        margin:  EdgeInsets.only(top: getResponsiveFontSize(context, fontSize: 15),),
+        padding:  EdgeInsets.symmetric(horizontal: getResponsiveFontSize(context, fontSize: 10),
+          vertical: getResponsiveFontSize(context, fontSize: 8),),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: widget.isSelected? Color(AppColors.mainColor):Color(AppColors.secondaryColor),

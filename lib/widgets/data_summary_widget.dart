@@ -11,7 +11,6 @@ class DataSummaryWidget extends StatelessWidget {
     final data = SummaryData();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      margin: const EdgeInsets.only(right: 20,left: 10, top: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Color(AppColors.grayContainer),

@@ -8,7 +8,6 @@ class SearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20,left:10, right: 20),
       decoration: BoxDecoration(
         color: Color(AppColors.secondaryColor),
             borderRadius: BorderRadius.circular(8)

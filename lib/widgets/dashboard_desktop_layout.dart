@@ -1,4 +1,3 @@
-
 import 'package:blackdash_board/widgets/summary_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,28 +10,25 @@ class DashBoardDeskTopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return const Scaffold(  body: SafeArea(
-      child: Row(
-        children: [
-          Expanded(
-            flex: 3,
-            child: SizedBox(
-              child: CustomDrawer(),
-            )
-          ),
-          Expanded(
-            flex: 8,
-            child: SizedBox(
-              child:
-              CenterWidget(),
+    return const Scaffold(
+      body: SafeArea(
+        child: Row(
+          children: [
+            Expanded(
+                flex: 3,
+                child: SizedBox(
+                  child: CustomDrawer(),
+                )),
+            Expanded(
+              flex: 8,
+              child: SizedBox(
+                child: CenterWidget(),
+              ),
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child:SummaryWidget()
-          ),
-        ],
-      ),  ),
+            Expanded(flex: 5, child: SummaryWidget()),
+          ],
+        ),
+      ),
     );
   }
 }

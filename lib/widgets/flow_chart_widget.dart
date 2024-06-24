@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import '../Data/line_chart_data.dart';
 import '../core/Utils/colors.dart';
 
-class LineChartSample2 extends StatefulWidget {
-  const LineChartSample2({super.key});
+class LineChartWidget extends StatefulWidget {
+  const LineChartWidget({super.key});
 
   @override
-  State<LineChartSample2> createState() => _LineChartSample2State();
+  State<LineChartWidget> createState() => _LineChartWidgetState();
 }
 
-class _LineChartSample2State extends State<LineChartSample2> {
+class _LineChartWidgetState extends State<LineChartWidget> {
   List<Color> gradientColors = [Color(AppColors.flowColor), Color(AppColors.mainColor)];
   bool showAvg = false;
 
@@ -33,7 +33,6 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ],
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      margin: const EdgeInsets.only(left:10, right: 20, top: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

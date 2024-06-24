@@ -1,5 +1,6 @@
 import 'package:blackdash_board/core/Utils/colors.dart';
 import 'package:blackdash_board/core/Utils/font_Styles.dart';
+import 'package:blackdash_board/core/Utils/font_size.dart';
 import 'package:flutter/material.dart';
 import '../Data/scheduled_data.dart';
 import '../Models/scheduled_model.dart';
@@ -11,8 +12,9 @@ class ScheduledWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10, ),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      margin:  EdgeInsets.only(top: getResponsiveFontSize(context, fontSize: 10), ),
+      padding:  EdgeInsets.symmetric(horizontal: 20,
+          vertical: getResponsiveFontSize(context, fontSize: 8),),
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(8),

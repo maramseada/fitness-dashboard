@@ -10,25 +10,22 @@ class DashboardTabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(  body: SafeArea(
-      child: Row(
-        children: [
-          Expanded(
-              flex: 3,
-              child: SizedBox(
-                child: CustomDrawer(),
-              )
-          ),
-          Expanded(
-            flex: 8,
-            child: SizedBox(
-              child:
-              CenterWidgetTablet
-                ()            ),
-          ),
-
-        ],
-      ),  ),
+    return const Scaffold(
+      body: SafeArea(
+        child: Row(
+          children: [
+            Expanded(
+                flex: 4,
+                child: SizedBox(
+                  child: CustomDrawer(),
+                )),
+            Expanded(
+              flex: 9,
+              child: SizedBox(child: CenterWidgetTablet()),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
