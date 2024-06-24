@@ -5,32 +5,36 @@ import '../Data/scheduled_data.dart';
 import '../Models/scheduled_model.dart';
 
 class ScheduledWidget extends StatelessWidget {
-  final ScheduledModel data ;
+  final ScheduledModel data;
   const ScheduledWidget({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  const EdgeInsets.only(top: 10, right: 20),
+      margin: const EdgeInsets.only(top: 10, ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.black,
-borderRadius: BorderRadius.circular(8),
-
+        borderRadius: BorderRadius.circular(8),
       ),
-      child:Row(
+      child: Row(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-Text(data.name, style:  AppStyles.style60014(context: context),textAlign: TextAlign.left,),
-              Text(data.date, style:  AppStyles.style60014(context: context, color: Color(AppColors.grayText)),),
-
+              Text(
+                data.name,
+                style: AppStyles.style60014(context: context),
+                textAlign: TextAlign.left,
+              ),
+              Text(
+                data.date,
+                style: AppStyles.style60014(context: context, color: Color(AppColors.grayText)),
+              ),
             ],
-          ), 
-
+          ),
         ],
-      ) ,
+      ),
     );
   }
 }

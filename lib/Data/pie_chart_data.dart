@@ -3,11 +3,12 @@ import 'dart:ui';
 
 import 'package:blackdash_board/core/Utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 
 class ChartData {
   final paiChartSelectionDatas = [
     PieChartSectionData(
-      color: Color(AppColors.mainColor),
+      color: Colors.blue,
       value: 25,
       showTitle: false,
       radius: 25,

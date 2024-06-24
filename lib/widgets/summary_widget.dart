@@ -18,9 +18,16 @@ class SummaryWidget extends StatelessWidget {
               const PieChartWidget(),
               Text('Summary', style: AppStyles.style60016(context: context),),
               const DataSummaryWidget(),
-              Text('Scheduled', style: AppStyles.style60016(context: context),),
+Container(
+  margin: const EdgeInsets.only(top: 10, left :10),
 
-              ScheduledListView(),
+  alignment: Alignment.centerLeft,
+  child:               Text('Scheduled', style: AppStyles.style60016(context: context),),
+
+),
+               Container(
+                margin: EdgeInsets.only(left: 10, right: 20, top: 10),
+                child: ScheduledListView(),),
             ],
           ),
         ),
