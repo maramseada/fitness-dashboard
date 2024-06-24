@@ -13,7 +13,7 @@ class CenterWidget extends StatelessWidget {
     return  Scaffold(
 body: SafeArea(child:Container(
 
-  child:  SingleChildScrollView(
+  child:  const SingleChildScrollView(
     child: Column(
       children: [
         SearchWidget(),

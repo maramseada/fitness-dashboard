@@ -26,7 +26,7 @@ Container(
 
 ),
                Container(
-                margin: EdgeInsets.only(left: 10, right: 20, top: 10),
+                margin: EdgeInsets.only(left: 10, right: 20, top: 10, bottom: 20),
                 child: ScheduledListView(),),
             ],
           ),

@@ -16,7 +16,7 @@ class ActivityLevelListView extends StatelessWidget {
             shrinkWrap: true,
             physics: const ScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+              crossAxisCount: 2,
               crossAxisSpacing: 15,
               mainAxisSpacing: 12.0,
               childAspectRatio: 5 / 4,
